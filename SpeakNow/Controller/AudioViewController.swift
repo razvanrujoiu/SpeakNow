@@ -22,8 +22,6 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     private var audioRecordsList: [AudioRecord] = []
     private var audioRecorder: AVAudioRecorder!
     private var audioPlayer: AVAudioPlayer!
-    private var audioId = 0
-
     
     override func viewDidLoad() {
         
@@ -46,8 +44,8 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         }
     }
     
-    func postAudioRecord(id: Int, title: String, content: String) {
-        AudioRecordService.shared.postAudioRecord(id: id, title: title, content: content) { (err) in
+    func postAudioRecord(title: String, content: String) {
+        AudioRecordService.shared.postAudioRecord(title: title, content: content) { (err) in
             if let err = err {
                 print("Failed to create post object", err)
                 return
@@ -110,15 +108,13 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
             do {
                 let fileData = try Data.init(contentsOf: recorder.url)
                 let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
-                postAudioRecord(id: audioId,
-                                title: recorder.url.lastPathComponent,
+                postAudioRecord(title: recorder.url.lastPathComponent,
                                 content: fileStream)
 
                 } catch {
                     print("error when converting recording to string")
                 }
-       
-            audioId += 1
+
             self.recordingsTableView.reloadData()
             SVProgressHUD.dismiss()
         } else {

@@ -31,13 +31,12 @@ class AudioRecordService: NSObject {
         }.resume()
     }
     
-    func postAudioRecord(id: Int, title: String, content: String, completion: @escaping (Error?) -> ()) {
+    func postAudioRecord(title: String, content: String, completion: @escaping (Error?) -> ()) {
         guard let url = URL(string: "http://localhost:8080/audioRecords/addAudioRecord") else { return }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let params = ["id": id,
-                      "title": title,
+        let params = ["title": title,
                       "content": content] as [String : Any]
         do {
             let data = try JSONSerialization.data(withJSONObject: params, options: .init())
