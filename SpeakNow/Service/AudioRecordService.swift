@@ -31,7 +31,7 @@ class AudioRecordService: NSObject {
         }.resume()
     }
     
-    func postAudioRecord(id: Int, title: String, content: [UInt8], completion: @escaping (Error?) -> ()) {
+    func postAudioRecord(id: Int, title: String, content: String, completion: @escaping (Error?) -> ()) {
         guard let url = URL(string: "http://localhost:8080/audioRecords/addAudioRecord") else { return }
         
         var urlRequest = URLRequest(url: url)

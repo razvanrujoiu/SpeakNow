@@ -26,6 +26,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
 
     
     override func viewDidLoad() {
+        
         self.stopRecordingButton.isEnabled = false
         self.recordingLabel.isHidden = true
         fetchAudioRecords()
@@ -45,7 +46,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         }
     }
     
-    func postAudioRecord(id: Int, title: String, content: [UInt8]) {
+    func postAudioRecord(id: Int, title: String, content: String) {
         AudioRecordService.shared.postAudioRecord(id: id, title: title, content: content) { (err) in
             if let err = err {
                 print("Failed to create post object", err)
@@ -68,7 +69,10 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
             }
             print("Succesfully deleted post from server")
             self.fetchAudioRecords()
-            self.recordingsTableView.reloadData()
+            DispatchQueue.main.async {
+                self.recordingsTableView.reloadData()
+            }
+            
         }
     }
 
@@ -101,30 +105,22 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-          
-         //  let audioContentByteArray: [UInt8] = convertAudioFileToByteArray(path: recorder.url)
-            let data = NSData(contentsOf: recorder.url)
-            
-//            do {
-//
-//                let content =  String(data: data as! Data, encoding: .utf8)
-//                self.audioRecord = AudioRecord(id: self.audioId, title: recorder.url.lastPathComponent, content: content!)
-//                } catch {
-//                    print("error when converting recording to string")
-//                }
+        if flag {
+            SVProgressHUD.show()
+            do {
+                let fileData = try Data.init(contentsOf: recorder.url)
+                let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
+                postAudioRecord(id: audioId,
+                                title: recorder.url.lastPathComponent,
+                                content: fileStream)
 
-           // let stringContent = String(bytes: audioContentByteArray, encoding: .utf8)
-
-//           self.audioRecord = AudioRecord(
-//                                id: audioId,
-//                                title: recorder.url.lastPathComponent,
-//                                content: stringContent!)
-//            postAudioRecord(id: 111,
-//                            title: "Razvan",
-//                            content: audioContentByteArray)
-//            audioId += 1
+                } catch {
+                    print("error when converting recording to string")
+                }
+       
+            audioId += 1
             self.recordingsTableView.reloadData()
+            SVProgressHUD.dismiss()
         } else {
             stopRecordingButton.isEnabled = false
             startRecordingButton.isEnabled = true
@@ -149,19 +145,17 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         
     }
     
-    func convertAudioFileToByteArray(path: URL) -> [UInt8] {
-        var byteArray = [UInt8]()
-        if let data = NSData(contentsOf: path) {
-            byteArray = data.map {
-                UInt8($0)
-            }
-        }
-        return byteArray
-    }
-    
-   
-    
-    
+//    func convertAudioFileToByteArray(path: URL) -> [UInt8] {
+//        var byteArray = [UInt8]()
+//        if let data = NSData(contentsOf: path) {
+//            byteArray = data.map {
+//                UInt8($0)
+//            }
+//        }
+//        return byteArray
+//    }
+//
+
 }
 
 extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
@@ -181,7 +175,7 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
         
         do {
             if let data = NSData(base64Encoded: audioRecord.content, options: .ignoreUnknownCharacters) {
-                audioPlayer = try! AVAudioPlayer(data: data as Data)
+                audioPlayer = try! AVAudioPlayer(data: data as Data, fileTypeHint: AVFileType.mp3.rawValue)
                 audioPlayer.delegate = self
                 audioPlayer.prepareToPlay()
                 audioPlayer.play()
@@ -198,3 +192,5 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
         deleteAudioRecord(id: audioRecord.id)
     }
 }
+
+

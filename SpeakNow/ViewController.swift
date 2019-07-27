@@ -79,28 +79,6 @@
 //        }
 //    }
 //
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        if flag {
-////            self.recordedAudio = RecordedAudio()
-////
-////            recordedAudio.title = recorder.url.lastPathComponent
-////            recordedAudio.date = Date()
-////
-////            try! realm.write {
-////                realm.add(recordedAudio)
-////            }
-////
-////            DispatchQueue.main.async {
-////                self.reloadTable()
-////            }
-//
-//            
-//        } else {
-//            print("Recording was not succesful")
-//            recordButton.isEnabled = true
-//            stopButton.isHidden = true
-//        }
-//    }
 //    
 //    @IBAction func stopRecording(_ sender: Any) {
 //        recordingProgress.isHidden = true
