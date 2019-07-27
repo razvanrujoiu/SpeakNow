@@ -40,6 +40,8 @@
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Can i use your mic?</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -116,15 +116,7 @@
 //        }
 //    }
 //    
-//    func readFile(path: URL) -> [UInt8] {
-//        var byteArray = [UInt8]()
-//        if let data = NSData(contentsOf: path) {
-//            byteArray = data.map { UInt8($0)}
-//           // byteArray = data.base64EncodedData(options: )
-//        }
-//        return byteArray
-//    }
-//
+
 //}
 //    
 //extension ViewController:UITableViewDataSource, UITableViewDelegate {

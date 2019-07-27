@@ -8,8 +8,9 @@
 
 import UIKit
 
-public struct AudioRecord {
+public struct AudioRecord: Decodable {
     var id: Int
     var title: String
-    var content: [UInt8]
+    var content: String
+    
 }

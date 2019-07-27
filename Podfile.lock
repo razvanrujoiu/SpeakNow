@@ -1,31 +1,44 @@
 PODS:
-  - Realm (3.7.4):
-    - Realm/Headers (= 3.7.4)
-  - Realm/Headers (3.7.4)
-  - RealmSwift (3.7.4):
-    - Realm (= 3.7.4)
-  - Socket.IO-Client-Swift (13.3.1):
-    - Starscream (~> 3.0.2)
-  - Starscream (3.0.5)
+  - Alamofire (4.8.2)
+  - netfox (1.15.1)
+  - PMAlertController (4.0.0)
+  - RxSwift (5.0.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+  - Swinject (2.6.2)
+  - SwinjectAutoregistration (2.6.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - RealmSwift
-  - Socket.IO-Client-Swift
-  - Starscream
+  - Alamofire
+  - netfox
+  - PMAlertController
+  - RxSwift (~> 5.0.0)
+  - SVProgressHUD
+  - SwiftyJSON (~> 5.0.0)
+  - SwinjectAutoregistration (~> 2.6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Realm
-    - RealmSwift
-    - Socket.IO-Client-Swift
-    - Starscream
+    - Alamofire
+    - netfox
+    - PMAlertController
+    - RxSwift
+    - SVProgressHUD
+    - SwiftyJSON
+    - Swinject
+    - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
-  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
-  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
-  Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
-  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  netfox: 20fd3e654fc5d67148d8eb8f384514f9559aa8bd
+  PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
 
-PODFILE CHECKSUM: 21c0c12895434f2a98eae2b600219549b2f05c6f
+PODFILE CHECKSUM: d1abe4a1545e22c736100cf7aa4a3f237dd0eff9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.3

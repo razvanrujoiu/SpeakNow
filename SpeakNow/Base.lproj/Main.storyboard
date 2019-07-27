@@ -67,7 +67,6 @@
                                 <state key="normal" image="mic1"/>
                                 <connections>
                                     <action selector="startRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fs-5O-tdr"/>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPj-FF-v0j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frm-Bc-pE9">
@@ -77,6 +76,9 @@
                                     <constraint firstAttribute="width" constant="90" id="lW5-vr-boE"/>
                                 </constraints>
                                 <state key="normal" image="stop"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7u-kb-LEt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
