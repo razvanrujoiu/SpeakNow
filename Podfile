@@ -6,12 +6,8 @@ target 'SpeakNow' do
   use_frameworks!
 
   # Pods for SpeakNow
-	pod 'Alamofire'
-	pod 'RxSwift', '~> 5.0.0'
-	pod 'SwiftyJSON', '~> 5.0.0'
 	pod 'PMAlertController'
 	pod 'SVProgressHUD'
-	pod 'SwinjectAutoregistration', '~> 2.6.0'
 	pod 'CryptoSwift'
 	pod 'netfox'
 end

@@ -8,8 +8,7 @@
 
 import UIKit
 import netfox
-import Swinject
-import SwinjectAutoregistration
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

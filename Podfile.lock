@@ -1,48 +1,28 @@
 PODS:
-  - Alamofire (4.8.2)
   - CryptoSwift (1.0.0)
   - netfox (1.15.1)
   - PMAlertController (4.0.0)
-  - RxSwift (5.0.0)
   - SVProgressHUD (2.2.5)
-  - SwiftyJSON (5.0.0)
-  - Swinject (2.6.2)
-  - SwinjectAutoregistration (2.6.0):
-    - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - Alamofire
   - CryptoSwift
   - netfox
   - PMAlertController
-  - RxSwift (~> 5.0.0)
   - SVProgressHUD
-  - SwiftyJSON (~> 5.0.0)
-  - SwinjectAutoregistration (~> 2.6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - CryptoSwift
     - netfox
     - PMAlertController
-    - RxSwift
     - SVProgressHUD
-    - SwiftyJSON
-    - Swinject
-    - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   netfox: 20fd3e654fc5d67148d8eb8f384514f9559aa8bd
   PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
-  SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
 
-PODFILE CHECKSUM: a836b3a0ca072b2a123475bdc48af0b8abea82eb
+PODFILE CHECKSUM: 6cabed0a4ccc32b94cb635e9264f8722f06e5122
 
 COCOAPODS: 1.7.3

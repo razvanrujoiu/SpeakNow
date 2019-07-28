@@ -12,5 +12,6 @@ public struct AudioRecord: Decodable {
     var id: Int
     var title: String
     var content: String
+    var date: String
     
 }

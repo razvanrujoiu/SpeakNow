@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="321" width="375" height="346"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAudio" textLabel="Qbz-pc-9cP" detailTextLabel="9Bu-EQ-GiU" style="IBUITableViewCellStyleSubtitle" id="gLQ-pA-yIS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAudio" textLabel="Qbz-pc-9cP" detailTextLabel="9Bu-EQ-GiU" style="IBUITableViewCellStyleSubtitle" id="gLQ-pA-yIS" customClass="AudioRecordTableViewCell" customModule="SpeakNow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gLQ-pA-yIS" id="g7V-Cp-muA">
@@ -55,6 +55,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="audioRecordDateLabel" destination="9Bu-EQ-GiU" id="ftN-bc-N9X"/>
+                                            <outlet property="audioRecordTitleLabel" destination="Qbz-pc-9cP" id="Rul-xc-55V"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

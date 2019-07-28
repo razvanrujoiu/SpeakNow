@@ -44,8 +44,8 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         }
     }
     
-    func postAudioRecord(title: String, content: String) {
-        AudioRecordService.shared.postAudioRecord(title: title, content: content) { (err) in
+    func postAudioRecord(title: String, content: String, date: String) {
+        AudioRecordService.shared.postAudioRecord(title: title, content: content, date: date) { (err) in
             if let err = err {
                 print("Failed to create post object", err)
                 return
@@ -118,10 +118,14 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
                 recordingTitle = input!
                 SVProgressHUD.show()
                 do {
+                    
                     let fileData = try Data.init(contentsOf: recorder.url)
                     let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
+                    let datetimeNow = Date()
+                    let now:String = datetimeNow.toString(dateFormat:"yyyy-MM-dd'T'HH:mm:ss.SSS")
                     self.postAudioRecord(title: recordingTitle,
-                                    content: fileStream)
+                                    content: fileStream,
+                                    date: now)
                     
                 } catch {
                     print("error when converting recording to string")
@@ -174,8 +178,8 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellAudio", for: indexPath)
-        cell.textLabel?.text = audioRecordsList[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellAudio", for: indexPath) as! AudioRecordTableViewCell
+        cell.load(audioRecord: audioRecordsList[indexPath.row])
         return cell
     }
     
