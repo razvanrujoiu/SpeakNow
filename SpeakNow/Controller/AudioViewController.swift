@@ -102,21 +102,35 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         audioRecorder.record()
     }
     
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            SVProgressHUD.show()
-            do {
-                let fileData = try Data.init(contentsOf: recorder.url)
-                let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
-                postAudioRecord(title: recorder.url.lastPathComponent,
-                                content: fileStream)
-
+            var recordingTitle: String = "Default"
+            showInputDialog(title: "Success",
+                            subtitle: "Name the recording",
+                            actionTitle: "Add",
+                            cancelTitle: "Cancel",
+                            inputPlaceholder: "recording name",
+                            inputKeyboardType: .default,
+                            cancelHandler: { (UIAlertAction) in
+                                return
+            }) { (input: String?) in
+                recordingTitle = input!
+                SVProgressHUD.show()
+                do {
+                    let fileData = try Data.init(contentsOf: recorder.url)
+                    let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
+                    self.postAudioRecord(title: recordingTitle,
+                                    content: fileStream)
+                    
                 } catch {
                     print("error when converting recording to string")
                 }
-
-            self.recordingsTableView.reloadData()
-            SVProgressHUD.dismiss()
+                
+                self.recordingsTableView.reloadData()
+                SVProgressHUD.dismiss()
+            }
+           
         } else {
             stopRecordingButton.isEnabled = false
             startRecordingButton.isEnabled = true

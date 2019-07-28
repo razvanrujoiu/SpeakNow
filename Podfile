@@ -12,5 +12,6 @@ target 'SpeakNow' do
 	pod 'PMAlertController'
 	pod 'SVProgressHUD'
 	pod 'SwinjectAutoregistration', '~> 2.6.0'
+	pod 'CryptoSwift'
 	pod 'netfox'
 end

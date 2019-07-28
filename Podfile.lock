@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - CryptoSwift (1.0.0)
   - netfox (1.15.1)
   - PMAlertController (4.0.0)
   - RxSwift (5.0.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CryptoSwift
   - netfox
   - PMAlertController
   - RxSwift (~> 5.0.0)
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CryptoSwift
     - netfox
     - PMAlertController
     - RxSwift
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   netfox: 20fd3e654fc5d67148d8eb8f384514f9559aa8bd
   PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
 
-PODFILE CHECKSUM: d1abe4a1545e22c736100cf7aa4a3f237dd0eff9
+PODFILE CHECKSUM: a836b3a0ca072b2a123475bdc48af0b8abea82eb
 
 COCOAPODS: 1.7.3

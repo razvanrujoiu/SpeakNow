@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A1FE4B7255E02BA8DB432F82 /* Pods_SpeakNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C4130B52ACFBDA8128897 /* Pods_SpeakNow.framework */; };
 		E3178A8922ECCCB100AD006B /* AudioRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A8822ECCCB100AD006B /* AudioRecordService.swift */; };
+		E3178A8E22ED302900AD006B /* Alert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A8D22ED302900AD006B /* Alert+Extensions.swift */; };
 		E32D4FE422E79B8000409D7B /* AudioRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4FE322E79B8000409D7B /* AudioRecord.swift */; };
 		E380505A22E8E52A00CD6B80 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380505922E8E52A00CD6B80 /* AudioViewController.swift */; };
 		E54909EC2185AC0E00E7A0D4 /* AVFoundation.framework in Resources */ = {isa = PBXBuildFile; fileRef = E5BB03142181F86A00620C9D /* AVFoundation.framework */; };
@@ -24,6 +25,7 @@
 		1663AB20E7766F37B6162DC5 /* Pods-SpeakNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakNow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeakNow/Pods-SpeakNow.debug.xcconfig"; sourceTree = "<group>"; };
 		C95BD60A99A67E13BEB64752 /* Pods-SpeakNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakNow.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeakNow/Pods-SpeakNow.release.xcconfig"; sourceTree = "<group>"; };
 		E3178A8822ECCCB100AD006B /* AudioRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordService.swift; sourceTree = "<group>"; };
+		E3178A8D22ED302900AD006B /* Alert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extensions.swift"; sourceTree = "<group>"; };
 		E32D4FE322E79B8000409D7B /* AudioRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecord.swift; sourceTree = "<group>"; };
 		E380505922E8E52A00CD6B80 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		E5BB02FF2181F7DE00620C9D /* SpeakNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E3178A8C22ED2F4600AD006B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3178A8D22ED302900AD006B /* Alert+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E32D4FE222E79B6600409D7B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,26 +86,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E32D4FE522E7A19100409D7B /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		E32D4FE622E7A19900409D7B /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				E3178A8822ECCCB100AD006B /* AudioRecordService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		E32D4FE722E7A1B100409D7B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E32D4FE822E7A1C000409D7B /* Controller */ = {
@@ -127,10 +123,9 @@
 		E5BB03012181F7DE00620C9D /* SpeakNow */ = {
 			isa = PBXGroup;
 			children = (
+				E3178A8C22ED2F4600AD006B /* Extensions */,
 				E32D4FE822E7A1C000409D7B /* Controller */,
-				E32D4FE722E7A1B100409D7B /* ViewModel */,
 				E32D4FE622E7A19900409D7B /* Service */,
-				E32D4FE522E7A19100409D7B /* API */,
 				E32D4FE222E79B6600409D7B /* Model */,
 				E5BB03022181F7DE00620C9D /* AppDelegate.swift */,
 				E5BB03042181F7DE00620C9D /* ViewController.swift */,
@@ -263,6 +258,7 @@
 				E3178A8922ECCCB100AD006B /* AudioRecordService.swift in Sources */,
 				E380505A22E8E52A00CD6B80 /* AudioViewController.swift in Sources */,
 				E5BB03052181F7DE00620C9D /* ViewController.swift in Sources */,
+				E3178A8E22ED302900AD006B /* Alert+Extensions.swift in Sources */,
 				E5BB03032181F7DE00620C9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
