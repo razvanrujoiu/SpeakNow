@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QY-ij-r1v">
-                                <rect key="frame" x="104" y="56" width="168" height="35"/>
+                                <rect key="frame" x="104" y="88" width="168" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="168" id="9eT-tf-bv9"/>
                                     <constraint firstAttribute="height" constant="35" id="AhE-8u-yrW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-iy-Sl3">
-                                <rect key="frame" x="0.0" y="321" width="375" height="346"/>
+                                <rect key="frame" x="0.0" y="291" width="375" height="376"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAudio" textLabel="Qbz-pc-9cP" detailTextLabel="9Bu-EQ-GiU" style="IBUITableViewCellStyleSubtitle" id="gLQ-pA-yIS" customClass="AudioRecordTableViewCell" customModule="SpeakNow" customModuleProvider="target">
@@ -66,40 +66,57 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="jFf-2a-EpK"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-zL-Y4S">
-                                <rect key="frame" x="143" y="216" width="90" height="75"/>
-                                <state key="normal" image="mic1"/>
-                                <connections>
-                                    <action selector="startRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fs-5O-tdr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frm-Bc-pE9">
-                                <rect key="frame" x="143" y="108" width="90" height="75"/>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlz-TI-Ht2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="1eH-Ov-DfX"/>
-                                    <constraint firstAttribute="width" constant="90" id="lW5-vr-boE"/>
+                                    <constraint firstAttribute="height" constant="44" id="fcO-xW-fkP"/>
                                 </constraints>
-                                <state key="normal" image="stop"/>
-                                <connections>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7u-kb-LEt"/>
-                                </connections>
-                            </button>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SpeakNow" id="Azh-2z-UhM"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="Xpj-B3-rFz">
+                                <rect key="frame" x="64.5" y="167" width="246" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-zL-Y4S">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <state key="normal" image="mic1"/>
+                                        <connections>
+                                            <action selector="startRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fs-5O-tdr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frm-Bc-pE9">
+                                        <rect key="frame" x="146" y="0.0" width="100" height="100"/>
+                                        <state key="normal" image="stop"/>
+                                        <connections>
+                                            <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7u-kb-LEt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Frm-Bc-pE9" firstAttribute="top" secondItem="2QY-ij-r1v" secondAttribute="bottom" constant="17" id="5eG-Yn-32f"/>
-                            <constraint firstItem="wEW-zL-Y4S" firstAttribute="top" secondItem="Frm-Bc-pE9" secondAttribute="bottom" constant="33" id="7NY-0u-G29"/>
-                            <constraint firstItem="Frm-Bc-pE9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="7w5-2H-rNL"/>
-                            <constraint firstItem="wEW-zL-Y4S" firstAttribute="width" secondItem="Frm-Bc-pE9" secondAttribute="width" id="C46-Zi-Ibl"/>
+                            <constraint firstItem="cSF-iy-Sl3" firstAttribute="top" secondItem="Xpj-B3-rFz" secondAttribute="bottom" constant="24" id="Brt-vR-I7Y"/>
                             <constraint firstItem="cSF-iy-Sl3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DQh-dk-K33"/>
-                            <constraint firstItem="wEW-zL-Y4S" firstAttribute="leading" secondItem="Frm-Bc-pE9" secondAttribute="leading" id="EyJ-lk-jME"/>
-                            <constraint firstItem="wEW-zL-Y4S" firstAttribute="trailing" secondItem="Frm-Bc-pE9" secondAttribute="trailing" id="R5l-di-3Vh"/>
-                            <constraint firstItem="wEW-zL-Y4S" firstAttribute="height" secondItem="Frm-Bc-pE9" secondAttribute="height" id="R7u-nR-ee8"/>
-                            <constraint firstItem="cSF-iy-Sl3" firstAttribute="top" secondItem="wEW-zL-Y4S" secondAttribute="bottom" constant="30" id="S3p-Bg-08R"/>
+                            <constraint firstItem="Xpj-B3-rFz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FgI-hY-dnG"/>
+                            <constraint firstItem="dlz-TI-Ht2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="InM-gp-8ac"/>
                             <constraint firstItem="cSF-iy-Sl3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ScC-P1-dIU"/>
                             <constraint firstItem="2QY-ij-r1v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="TGb-av-zno"/>
+                            <constraint firstItem="Xpj-B3-rFz" firstAttribute="top" secondItem="2QY-ij-r1v" secondAttribute="bottom" constant="44" id="WZT-vQ-bcn"/>
                             <constraint firstItem="cSF-iy-Sl3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="de9-Ek-i31"/>
-                            <constraint firstItem="2QY-ij-r1v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="rf4-Am-DAu"/>
+                            <constraint firstItem="dlz-TI-Ht2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="kkx-Jg-ALs"/>
+                            <constraint firstItem="2QY-ij-r1v" firstAttribute="top" secondItem="dlz-TI-Ht2" secondAttribute="bottom" constant="24" id="rf4-Am-DAu"/>
+                            <constraint firstItem="dlz-TI-Ht2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xs4-og-hzs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

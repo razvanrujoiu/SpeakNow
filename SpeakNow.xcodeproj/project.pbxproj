@@ -12,6 +12,7 @@
 		E3178A8E22ED302900AD006B /* Alert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A8D22ED302900AD006B /* Alert+Extensions.swift */; };
 		E3178A9022ED36E400AD006B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A8F22ED36E400AD006B /* Date+Extensions.swift */; };
 		E3178A9322ED392200AD006B /* AudioRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A9222ED392200AD006B /* AudioRecordTableViewCell.swift */; };
+		E3178A9822EDACBB00AD006B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3178A9722EDACBB00AD006B /* UIView+Extension.swift */; };
 		E32D4FE422E79B8000409D7B /* AudioRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4FE322E79B8000409D7B /* AudioRecord.swift */; };
 		E380505A22E8E52A00CD6B80 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380505922E8E52A00CD6B80 /* AudioViewController.swift */; };
 		E54909EC2185AC0E00E7A0D4 /* AVFoundation.framework in Resources */ = {isa = PBXBuildFile; fileRef = E5BB03142181F86A00620C9D /* AVFoundation.framework */; };
@@ -30,6 +31,7 @@
 		E3178A8D22ED302900AD006B /* Alert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extensions.swift"; sourceTree = "<group>"; };
 		E3178A8F22ED36E400AD006B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E3178A9222ED392200AD006B /* AudioRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordTableViewCell.swift; sourceTree = "<group>"; };
+		E3178A9722EDACBB00AD006B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E32D4FE322E79B8000409D7B /* AudioRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecord.swift; sourceTree = "<group>"; };
 		E380505922E8E52A00CD6B80 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		E5BB02FF2181F7DE00620C9D /* SpeakNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 			children = (
 				E3178A8D22ED302900AD006B /* Alert+Extensions.swift */,
 				E3178A8F22ED36E400AD006B /* Date+Extensions.swift */,
+				E3178A9722EDACBB00AD006B /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				E32D4FE422E79B8000409D7B /* AudioRecord.swift in Sources */,
 				E3178A8922ECCCB100AD006B /* AudioRecordService.swift in Sources */,
 				E3178A9022ED36E400AD006B /* Date+Extensions.swift in Sources */,
+				E3178A9822EDACBB00AD006B /* UIView+Extension.swift in Sources */,
 				E380505A22E8E52A00CD6B80 /* AudioViewController.swift in Sources */,
 				E5BB03052181F7DE00620C9D /* ViewController.swift in Sources */,
 				E3178A9322ED392200AD006B /* AudioRecordTableViewCell.swift in Sources */,

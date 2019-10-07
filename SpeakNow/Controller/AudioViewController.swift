@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import CryptoSwift
 import PMAlertController
 import SVProgressHUD
 import UIKit
@@ -29,6 +30,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         self.recordingLabel.isHidden = true
         fetchAudioRecords()
         self.recordingsTableView.reloadData()
+        
     
     }
     
@@ -81,6 +83,12 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         self.stopRecordingButton.isEnabled = true
         self.startRecordingButton.isEnabled = false
        
+        
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.recordingLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        })
+        
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
 
         let currentDateTime = NSDate()
@@ -120,7 +128,9 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
                 do {
                     
                     let fileData = try Data.init(contentsOf: recorder.url)
+                    
                     let fileStream: String = fileData.base64EncodedString(options: Data.Base64EncodingOptions.init(rawValue: 0))
+                    
                     let datetimeNow = Date()
                     let now:String = datetimeNow.toString(dateFormat:"yyyy-MM-dd'T'HH:mm:ss.SSS")
                     self.postAudioRecord(title: recordingTitle,
@@ -159,16 +169,24 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPla
         
     }
     
-//    func convertAudioFileToByteArray(path: URL) -> [UInt8] {
-//        var byteArray = [UInt8]()
-//        if let data = NSData(contentsOf: path) {
-//            byteArray = data.map {
-//                UInt8($0)
-//            }
-//        }
-//        return byteArray
+
+//    func aesEncrypt(text: String, key: String, iv: String) -> String? {
+//        do {
+//            let aes = try AES(key: key, iv: iv, padding: .pkcs7)
+//            let cipherText = try aes.encrypt(text.bytes)
+//            return String(bytes: cipherText, encoding: String.Encoding.utf8)!
+//        } catch {}
+//        return nil
 //    }
-//
+//    
+//    func aesDecrypt(text: String, key: String, iv: String) -> String? {
+//        do {
+//             let aes = try AES(key: key, iv: iv, padding: .pkcs7)
+//             let cipherText = try aes.decrypt(text.bytes)
+//            return String(bytes: cipherText, encoding: String.Encoding.utf8)
+//        } catch {}
+//        return nil
+//    }
 
 }
 
@@ -188,6 +206,7 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
         let audioRecord = self.audioRecordsList[indexPath.row]
         
         do {
+            
             if let data = NSData(base64Encoded: audioRecord.content, options: .ignoreUnknownCharacters) {
                 audioPlayer = try! AVAudioPlayer(data: data as Data, fileTypeHint: AVFileType.mp3.rawValue)
                 audioPlayer.delegate = self
@@ -206,5 +225,4 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
         deleteAudioRecord(id: audioRecord.id)
     }
 }
-
 
